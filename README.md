@@ -1,4 +1,4 @@
-# CLion C Run_Student_Tests Toll
+# CLion C Run_Student_Tests Tool
 
 A lightweight, automated test runner for C assignments in CLion. This tool was specifically designed for Technion students to bypass the tedious loop of repeatedly uploading files to GradeScope just to run basic tests. It automatically locates CLion's internal CMake compiler, builds your current project, and validates your executable's output against a suite of JSON-defined test cases locally.
 
