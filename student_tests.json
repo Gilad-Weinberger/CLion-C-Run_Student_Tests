@@ -9,6 +9,11 @@
       "name": "Test 2: Negative Numbers",
       "input": "-5 10\n",
       "output": "Result: 5"
+    },
+    {
+      "name": "Test 3: Zeros",
+      "input": "0 0\n",
+      "output": "Result: 0"
     }
   ]
 }
