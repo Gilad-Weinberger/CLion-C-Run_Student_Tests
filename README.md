@@ -41,9 +41,7 @@ The script will automatically compile your C code, execute it with the inputs de
 
 ## 3. JSON Test Format & Example
 
-Create a `student_tests.json` file structured like this. 
-
-If your `main.c` looks like this:
+### If your `main.c` looks like this:
 ```c
 #include <stdio.h>
 
@@ -56,7 +54,7 @@ int main() {
 }
 ```
 
-Your `student_tests.json` should look like this:
+### Then your `student_tests.json` should look like this:
 ```json
 {
   "tests": [
