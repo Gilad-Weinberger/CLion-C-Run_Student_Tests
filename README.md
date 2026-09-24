@@ -13,12 +13,12 @@ A lightweight, automated test runner for C assignments in CLion. This tool was s
 
 You only need one copy of the Python script on your machine. It does not need to be inside your C project folders. 
 
-1. Save `run_student_tests.py` anywhere on your computer (e.g., `C:\scripts\run_student_tests.py` or inside a dedicated GitHub repository folder).
+1. Save `run_student_tests.py` anywhere on your computer (e.g., `C:\scripts\run_student_tests.py`, or in your Desktop folder).
 2. Open CLion and go to **File > Settings > Tools > External Tools**.
 3. Click the `+` icon to add a new tool:
    * **Name:** `Run Student Tests`
-   * **Program:** `python` *(or the absolute path to your python.exe)*
-   * **Arguments:** `"C:\absolute\path\to\your\run_student_tests.py"` *(Make sure this matches exactly where you saved the file in Step 1, enclosed in quotes)*
+   * **Program:** the absolute path to your python.exe, usually `C:\Program Files\Python314\python.exe` or `%LocalAppData%\Programs\Python\Python314\python.exe`*
+   * **Arguments:** `"C:\absolute\path\to\your\run_student_tests.py"` *(Make sure this matches exactly where you saved the file in Step 1, enclosed in quotes (""))*
    * **Working directory:** `$ProjectFileDir$`
 4. Click **OK** to save.
 
