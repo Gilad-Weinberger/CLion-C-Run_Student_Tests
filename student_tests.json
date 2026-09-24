@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Test 1: Simple Addition",
+      "input": "1 2\n",
+      "output": "Result: 3"
+    },
+    {
+      "name": "Test 2: Negative Numbers",
+      "input": "-5 10\n",
+      "output": "Result: 5"
+    }
+  ]
+}
