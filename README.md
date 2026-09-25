@@ -27,7 +27,7 @@ To make testing even faster, you can map this tool to a keyboard shortcut:
 1. Go to **File > Settings > Keymap**.
 2. In the search box at the top, type `Run Student Tests`.
 3. Right-click the tool in the search results and select **Add Keyboard Shortcut**.
-4. Press your desired key combination (e.g., `Ctrl + Alt + T` or `Shift + F10`) and click **OK**.
+4. Press your desired key combination (e.g., `Ctrl + Alt + T` or `Shift + F10`. usually prefer a combination that's not already in use for other actions.) and click **OK**.
 
 ## 2. Usage Per Project
 
