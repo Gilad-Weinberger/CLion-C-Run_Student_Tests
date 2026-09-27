@@ -81,8 +81,11 @@ def run_tests():
 
     for i, test in enumerate(tests):
         name = test.get('name', f'Test {i+1}')
-        stdin_data = test.get('input', '')
-        expected_output = test.get('output', '')
+        
+        # FIX: Explicitly convert input and output to strings to support raw JSON numbers
+        stdin_data = str(test.get('input', ''))
+        raw_expected = test.get('output', '')
+        expected_output = str(raw_expected).strip()
 
         print(f"Running {name}...")
 
@@ -96,7 +99,6 @@ def run_tests():
             )
 
             actual_output = result.stdout.strip()
-            expected_output = expected_output.strip()
 
             if actual_output == expected_output:
                 print("  ✅ Passed")
