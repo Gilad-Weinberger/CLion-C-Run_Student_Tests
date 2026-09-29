@@ -82,8 +82,14 @@ def run_tests():
     for i, test in enumerate(tests):
         name = test.get('name', f'Test {i+1}')
         
-        # FIX: Explicitly convert input and output to strings to support raw JSON numbers
-        stdin_data = str(test.get('input', ''))
+        # Handle inputs: if it's a list, join with newlines.
+        # If it's an empty string "", it triggers immediate EOF.
+        raw_input = test.get('input', '')
+        if isinstance(raw_input, list):
+            stdin_data = '\n'.join(map(str, raw_input)) + '\n'
+        else:
+            stdin_data = str(raw_input)
+
         raw_expected = test.get('output', '')
         expected_output = str(raw_expected).strip()
 
@@ -98,6 +104,13 @@ def run_tests():
                 timeout=2
             )
 
+            # Check if the C program crashed (e.g., segfault on EOF)
+            if result.returncode != 0:
+                print(f"  ❌ Failed (Program crashed or aborted - Exit Code {result.returncode})")
+                if result.stderr:
+                    print(f"  Error details: {result.stderr.strip()}")
+                continue
+
             actual_output = result.stdout.strip()
 
             if actual_output == expected_output:
@@ -109,7 +122,7 @@ def run_tests():
                 print(f"  Got:      {repr(actual_output)}")
 
         except subprocess.TimeoutExpired:
-            print("  ❌ Failed (Timeout - infinite loop detected)")
+            print("  ❌ Failed (Timeout - infinite loop detected. Likely missing an EOF check in a while loop!)")
 
     print(f"\nResults: {passed}/{total} tests passed.")
 
