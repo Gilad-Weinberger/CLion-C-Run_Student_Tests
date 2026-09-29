@@ -1,19 +1,23 @@
 {
   "tests": [
     {
-      "name": "Test 1: Simple Addition",
-      "input": "1 2\n",
-      "output": "Result: 3"
+      "name": "Single line of numbers",
+      "input": "5 10 15",
+      "output": "30"
     },
     {
-      "name": "Test 2: Negative Numbers",
-      "input": "-5 10\n",
-      "output": "Result: 5"
+      "name": "Multiple lines until EOF",
+      "input": [
+        100,
+        200,
+        300
+      ],
+      "output": "600"
     },
     {
-      "name": "Test 3: Zeros",
-      "input": "0 0\n",
-      "output": "Result: 0"
+      "name": "Immediate EOF (Empty input)",
+      "input": "",
+      "output": "0"
     }
   ]
 }
