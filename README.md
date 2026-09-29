@@ -46,10 +46,13 @@ The script will automatically compile your C code, execute it with the inputs de
 #include <stdio.h>
 
 int main() {
-    int a, b;
-    if (scanf("%d %d", &a, &b) == 2) {
-        printf("Result: %d\n", a + b);
+    int num, sum = 0;
+
+    while (scanf("%d", &num) == 1) {
+        sum += num;
     }
+
+    printf("%d\n", sum);
     return 0;
 }
 ```
@@ -59,14 +62,23 @@ int main() {
 {
   "tests": [
     {
-      "name": "Test 1: Simple Addition",
-      "input": "1 2\n",
-      "output": "Result: 3"
+      "name": "Single line of numbers",
+      "input": "5 10 15",
+      "output": "30"
     },
     {
-      "name": "Test 2: Negative Numbers",
-      "input": "-5 10\n",
-      "output": "Result: 5"
+      "name": "Multiple lines until EOF",
+      "input": [
+        100,
+        200,
+        300
+      ],
+      "output": "600"
+    },
+    {
+      "name": "Immediate EOF (Empty input)",
+      "input": "",
+      "output": "0"
     }
   ]
 }
